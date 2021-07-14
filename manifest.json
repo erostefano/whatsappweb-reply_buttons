@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Web Reply Buttons",
+  "version": "1.0.0",
+  "description": "",
+  "icons": {
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "buttons.js"
+      ],
+      "matches": [
+        "https://web.whatsapp.com/"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "style.css"
+      ],
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ]
+    }
+  ]
+}
