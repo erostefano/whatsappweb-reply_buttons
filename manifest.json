@@ -3,8 +3,13 @@
   "name": "WhatsApp Web Reply Buttons",
   "version": "1.0.0",
   "description": "",
-  "icons": {
-  },
+  "icons": {},
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/"
+  ],
   "content_scripts": [
     {
       "js": [
@@ -15,9 +20,9 @@
       ]
     }
   ],
-  "host_permissions": [
-    "https://web.whatsapp.com/"
-  ],
+  "action": {
+    "default_popup": "settings.html"
+  },
   "web_accessible_resources": [
     {
       "resources": [
