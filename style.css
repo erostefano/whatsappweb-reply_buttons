@@ -1,5 +1,5 @@
 .button-group {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
