@@ -15,7 +15,7 @@ chrome.storage.local.get('settings', ({settings}) => {
         let button = document.createElement('button');
         button.classList.add('reply-button');
         button.innerHTML = el;
-        button.title = 'Accepted order Accepted order Accepted order Accepted order Accepted orderAccepted order';
+        button.title = el;
         button.addEventListener('click', () => {
 
         });
