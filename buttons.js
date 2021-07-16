@@ -26,7 +26,7 @@ chrome.storage.local.get('settings', ({settings}) => {
 });
 
 window.addEventListener('click', () => {
-    let clip = document.querySelector('[data-testid="clip"]').parentElement.parentElement;
+    const clip = document.querySelector('[data-testid="clip"]').parentElement.parentElement;
 
     if (!clip) {
         return;
@@ -36,15 +36,16 @@ window.addEventListener('click', () => {
         return;
     }
 
+    // position buttonGroup
     buttonGroup.style.top = (clip.getBoundingClientRect().top - buttonGroup.getBoundingClientRect().height - 16) + 'px';
     buttonGroup.style.left = (document.getElementById('side').getBoundingClientRect().right + 16) + 'px';
 
-    let buttonGroupToggle = clip.cloneNode(true);
+    // create buttonGroupToggle
+    const buttonGroupToggle = clip.cloneNode(true);
     buttonGroupToggle.setAttribute('id', 'button-group-toggle');
     buttonGroupToggle.addEventListener('click', () => {
         buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
     });
-
     clip.parentElement.appendChild(buttonGroupToggle);
 });
 
