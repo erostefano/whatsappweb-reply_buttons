@@ -39,3 +39,9 @@
     border-color: #0062cc;
     opacity: 1;
 }
+
+#button-group-toggle {
+    height: 1.5rem;
+    margin: auto 0.5rem;
+    cursor: pointer;
+}

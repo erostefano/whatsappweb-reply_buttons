@@ -42,11 +42,8 @@ window.addEventListener('click', () => {
 
     // create buttonGroupToggle
     const buttonGroupToggle = document.createElement('img');
-    buttonGroupToggle.src = chrome.runtime.getURL('img/robot64.png');
-    buttonGroupToggle.style.height = '1.5rem';
-    buttonGroupToggle.style.margin = 'auto 0.5rem';
-    buttonGroupToggle.style.cursor = 'pointer';
     buttonGroupToggle.setAttribute('id', 'button-group-toggle');
+    buttonGroupToggle.src = chrome.runtime.getURL('img/robot64.png');
     buttonGroupToggle.addEventListener('click', () => {
         buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
     });
