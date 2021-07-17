@@ -17,9 +17,13 @@ chrome.storage.local.get('settings', ({settings}) => {
         button.classList.add('reply-button');
         button.innerHTML = setting;
         button.title = setting;
-        button.addEventListener('click', () => {
+        button.addEventListener('click', event => {
             buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
-            // TODO: send text!
+            const inputText = document.querySelectorAll(".copyable-text.selectable-text[contenteditable='true']")[1];
+            inputText.innerHTML = event.target.innerHTML;
+            inputText.dispatchEvent(new Event('input', {bubbles: true}));
+            const send = document.querySelector("[data-testid='send']").parentElement;
+            send.click();
         });
         buttonGroup.appendChild(button);
     });
