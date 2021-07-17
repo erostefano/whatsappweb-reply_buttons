@@ -3,7 +3,11 @@
   "name": "WhatsApp Web Reply Buttons",
   "version": "1.0.0",
   "description": "",
-  "icons": {},
+  "icons": {
+    "16": "img/robot16.png",
+    "64": "img/robot64.png",
+    "128": "img/robot128.png"
+  },
   "permissions": [
     "storage"
   ],
