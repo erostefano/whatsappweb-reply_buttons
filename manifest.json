@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "description": "Simply define your own reply buttons and answer easier and faster",
   "icons": {
-    "16": "img/robot16.png",
-    "64": "img/robot64.png",
-    "128": "img/robot128.png"
+    "16": "icons/robot16.png",
+    "64": "icons/robot64.png",
+    "128": "icons/robot128.png"
   },
   "permissions": [
     "storage"
@@ -17,7 +17,7 @@
   "content_scripts": [
     {
       "js": [
-        "buttons.js"
+        "buttons/buttons.js"
       ],
       "matches": [
         "https://web.whatsapp.com/"
@@ -25,13 +25,13 @@
     }
   ],
   "action": {
-    "default_popup": "settings.html"
+    "default_popup": "settings/settings.html"
   },
   "web_accessible_resources": [
     {
       "resources": [
-        "style.css",
-        "img/robot64.png"
+        "buttons/buttons.css",
+        "icons/robot64.png"
       ],
       "matches": [
         "https://web.whatsapp.com/*"
