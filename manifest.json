@@ -26,7 +26,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "style.css"
+        "style.css",
+        "img/robot64.png"
       ],
       "matches": [
         "https://web.whatsapp.com/*"

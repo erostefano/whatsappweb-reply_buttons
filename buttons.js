@@ -41,12 +41,15 @@ window.addEventListener('click', () => {
     buttonGroup.style.left = (document.getElementById('side').getBoundingClientRect().right + 16) + 'px';
 
     // create buttonGroupToggle
-    const buttonGroupToggle = clip.cloneNode(true);
+    const buttonGroupToggle = document.createElement('img');
+    buttonGroupToggle.src = chrome.runtime.getURL('img/robot64.png');
+    buttonGroupToggle.style.height = '1.5rem';
+    buttonGroupToggle.style.margin = 'auto 0.5rem';
     buttonGroupToggle.setAttribute('id', 'button-group-toggle');
     buttonGroupToggle.addEventListener('click', () => {
         buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
     });
-    clip.parentElement.appendChild(buttonGroupToggle);
+    clip.parentElement.parentElement.appendChild(buttonGroupToggle);
 });
 
 function toggleButtonGroup(display) {
