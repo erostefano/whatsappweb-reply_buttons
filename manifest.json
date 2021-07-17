@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "WhatsApp Web Reply Buttons",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simply add your own reply buttons and answer easier and faster",
   "icons": {
     "16": "img/robot16.png",
     "64": "img/robot64.png",
