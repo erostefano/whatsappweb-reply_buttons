@@ -30,10 +30,12 @@
     z-index: 999;
     text-overflow: ellipsis;
     overflow: hidden;
+    opacity: 0.7;
 }
 
 .reply-button:hover {
     color: #fff;
     background-color: #0069d9;
     border-color: #0062cc;
+    opacity: 1;
 }
