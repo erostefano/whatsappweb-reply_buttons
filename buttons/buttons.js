@@ -18,7 +18,7 @@ chrome.storage.local.get('settings', ({settings}) => {
         button.innerHTML = setting;
         button.title = setting;
         button.addEventListener('click', event => {
-            buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
+            toggleReplyButtons(buttonGroup);
             const inputText = document.querySelectorAll(".copyable-text.selectable-text[contenteditable='true']")[1];
             inputText.innerHTML = event.target.innerHTML;
             inputText.dispatchEvent(new Event('input', {bubbles: true}));
@@ -49,7 +49,7 @@ window.addEventListener('click', () => {
     buttonGroupToggle.setAttribute('id', 'button-group-toggle');
     buttonGroupToggle.src = chrome.runtime.getURL('icons/robot64.png');
     buttonGroupToggle.addEventListener('click', () => {
-        buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
+        toggleReplyButtons(buttonGroup, buttonGroupToggle);
     });
     clip.parentElement.parentElement.appendChild(buttonGroupToggle);
 });
@@ -58,4 +58,20 @@ function toggleButtonGroup(display) {
     return display !== 'visible'
         ? 'visible'
         : 'hidden';
+}
+
+function toggleReplyButtons(buttonGroup, buttonGroupToggle) {
+    buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
+
+    buttonGroupToggle = buttonGroupToggle
+        ? buttonGroupToggle
+        : document.getElementById('button-group-toggle');
+
+    if (buttonGroupToggle) {
+        if (buttonGroupToggle.classList.contains('open')) {
+            buttonGroupToggle.classList.remove('open');
+        } else {
+            buttonGroupToggle.classList.add('open');
+        }
+    }
 }

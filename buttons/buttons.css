@@ -42,6 +42,11 @@
 
 #button-group-toggle {
     height: 1.5rem;
-    margin: auto 0.5rem;
+    padding: 0.5rem;
     cursor: pointer;
+}
+
+#button-group-toggle.open {
+    background-color: #0069d9;
+    border-radius: 50%;
 }
