@@ -6,13 +6,12 @@ document.head.appendChild(style);
 
 // create buttonGroup
 const buttonGroup = document.createElement('div');
-buttonGroup.classList.add('button-group');
+buttonGroup.setAttribute('id', 'button-group');
 document.body.appendChild(buttonGroup);
 
 // create buttons
 chrome.storage.local.get('settings', ({settings}) => {
-    const buttonSettings = JSON.parse(settings);
-    buttonSettings.forEach(setting => {
+    JSON.parse(settings).forEach(setting => {
         const button = document.createElement('button');
         button.classList.add('reply-button');
         button.innerHTML = setting;
