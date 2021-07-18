@@ -54,24 +54,18 @@ window.addEventListener('click', () => {
     clip.parentElement.parentElement.appendChild(buttonGroupToggle);
 });
 
-function toggleButtonGroup(display) {
-    return display !== 'visible'
+function toggleReplyButtons(buttonGroup, buttonGroupToggle) {
+    // toggle buttonGroup
+    buttonGroup.style.visibility = buttonGroup.style.visibility !== 'visible'
         ? 'visible'
         : 'hidden';
-}
 
-function toggleReplyButtons(buttonGroup, buttonGroupToggle) {
-    buttonGroup.style.visibility = toggleButtonGroup(buttonGroup.style.visibility);
-
+    // toggle buttonGroupToggle
     buttonGroupToggle = buttonGroupToggle
         ? buttonGroupToggle
         : document.getElementById('button-group-toggle');
 
-    if (buttonGroupToggle) {
-        if (buttonGroupToggle.classList.contains('open')) {
-            buttonGroupToggle.classList.remove('open');
-        } else {
-            buttonGroupToggle.classList.add('open');
-        }
-    }
+    buttonGroupToggle.classList.contains('open')
+        ? buttonGroupToggle.classList.remove('open')
+        : buttonGroupToggle.classList.add('open');
 }
