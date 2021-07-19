@@ -1,23 +1,26 @@
-const replyDivs = document.querySelectorAll('.reply')
-replyDivs.forEach(div => {
-    let input = div.children[0];
-    input.addEventListener('blur', () => {
-        const inputs = document.querySelectorAll('.reply input');
-        chrome.storage.local.set({settings: inputs.map(input => input.value)});
+chrome.storage.local.get('settings', ({settings}) => {
+    const div = document.getElementsByClassName('reply')[0];
+    settings.forEach(setting => {
+        const replyDiv = div.cloneNode(true);
+        replyDiv.children[0].value = setting;
+        addEventListeners(replyDiv);
+        document.getElementById('button-group').appendChild(replyDiv);
     });
-    let button = div.children[1];
-    button.addEventListener('click', () => {
-        div.remove();
-    });
-})
+    div.remove();
+});
 
-const addButton = document.getElementsByClassName('add')[0];
-addButton.addEventListener('click', () => {
+document.getElementById('add').addEventListener('click', () => {
     const replyDiv = document.getElementsByClassName('reply')[0].cloneNode(true);
     replyDiv.children[0].value = '';
-    replyDiv.children[1].addEventListener('click', () => {
-        replyDiv.remove();
-    })
-    const buttonGroup = document.getElementById('button-group');
-    buttonGroup.appendChild(replyDiv);
+    addEventListeners(replyDiv);
+    document.getElementById('button-group').appendChild(replyDiv);
 });
+
+document.getElementsByClassName('save')[0].addEventListener('click', () => {
+    const inputs = document.querySelectorAll('.reply input');
+    chrome.storage.local.set({settings: Array.from(inputs).map(input => input.value)});
+});
+
+function addEventListeners(div) {
+    div.children[1].addEventListener('click', () => div.remove())
+}
