@@ -11,7 +11,7 @@ document.body.appendChild(buttonGroup);
 
 // create buttons
 chrome.storage.local.get('settings', ({settings}) => {
-    JSON.parse(settings).forEach(setting => {
+    settings.forEach(setting => {
         const button = document.createElement('button');
         button.classList.add('reply-button');
         button.innerHTML = setting;
