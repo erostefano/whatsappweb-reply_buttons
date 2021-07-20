@@ -1,7 +1,7 @@
 #button-group {
     display: flex;
     flex-direction: column;
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
 }
 
