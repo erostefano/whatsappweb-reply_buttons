@@ -2,7 +2,7 @@
 
 With this Chrome Extension you define your own reply buttons to answer faster and easier.
 
-![Printscreen](printscreen.png)
+![Demo](demo.gif)
 
 ## Install
 
