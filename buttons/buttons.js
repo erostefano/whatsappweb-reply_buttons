@@ -50,7 +50,7 @@ window.addEventListener('click', () => {
                     buttonGroup.appendChild(button);
                 });
 
-                // position button-group-toggle
+                // position button-group
                 buttonGroup.style.top = (clip.getBoundingClientRect().top - buttonGroup.getBoundingClientRect().height - 16) + 'px';
                 buttonGroup.style.left = (document.getElementById('side').getBoundingClientRect().right + 16) + 'px';
             });
