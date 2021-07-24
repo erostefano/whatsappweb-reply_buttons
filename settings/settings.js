@@ -22,5 +22,10 @@ document.getElementsByClassName('save')[0].addEventListener('click', () => {
 });
 
 function addEventListeners(div) {
-    div.children[1].addEventListener('click', () => div.remove())
+    div.children[1].addEventListener('click', () => {
+        if (document.querySelectorAll('.reply input').length === 1) {
+            return;
+        }
+        return div.remove();
+    })
 }
