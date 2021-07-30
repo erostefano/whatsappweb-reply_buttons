@@ -9,14 +9,14 @@ chrome.storage.local.get('settings', ({settings}) => {
     div.remove();
 });
 
-document.getElementById('add').addEventListener('click', () => {
+document.getElementById('add').children[0].addEventListener('click', () => {
     const replyDiv = document.getElementsByClassName('reply')[0].cloneNode(true);
     replyDiv.children[0].value = '';
     addEventListeners(replyDiv);
     document.getElementById('button-group').appendChild(replyDiv);
 });
 
-document.getElementsByClassName('save')[0].addEventListener('click', () => {
+document.getElementById('save').addEventListener('click', () => {
     const inputs = document.querySelectorAll('.reply input');
     chrome.storage.local.set({settings: Array.from(inputs).map(input => input.value)});
 });
