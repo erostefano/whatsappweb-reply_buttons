@@ -33,27 +33,40 @@ window.addEventListener('click', () => {
 
             // create buttons
             chrome.storage.local.get('settings', ({settings}) => {
-                settings.forEach(setting => {
-                    const button = document.createElement('button');
-                    button.classList.add('reply-button');
-                    button.innerHTML = setting;
-                    button.title = setting;
-                    button.addEventListener('click', event => {
-                        const inputText = document.querySelectorAll(".copyable-text.selectable-text[contenteditable='true']")[1];
-                        inputText.innerHTML = event.target.innerHTML;
-                        inputText.dispatchEvent(new Event('input', {bubbles: true}));
-                        const send = document.querySelector("[data-testid='send']").parentElement;
-                        send.click();
-                        buttonGroup.remove();
-                        buttonGroupToggle.classList.remove('open');
-                    });
-                    buttonGroup.appendChild(button);
-                });
+                    if (!settings) {
+                        const button = document.createElement('button');
+                        button.classList.add('reply-button');
+                        button.innerHTML = "no replies yet";
+                        button.title = 'no replies yet';
+                        button.addEventListener('click', () => {
+                            buttonGroup.remove();
+                            buttonGroupToggle.classList.remove('open');
+                        });
+                        buttonGroup.appendChild(button);
+                    } else {
+                        settings.forEach(setting => {
+                            const button = document.createElement('button');
+                            button.classList.add('reply-button');
+                            button.innerHTML = setting;
+                            button.title = setting;
+                            button.addEventListener('click', event => {
+                                const inputText = document.querySelectorAll(".copyable-text.selectable-text[contenteditable='true']")[1];
+                                inputText.innerHTML = event.target.innerHTML;
+                                inputText.dispatchEvent(new Event('input', {bubbles: true}));
+                                const send = document.querySelector("[data-testid='send']").parentElement;
+                                send.click();
+                                buttonGroup.remove();
+                                buttonGroupToggle.classList.remove('open');
+                            });
+                            buttonGroup.appendChild(button);
+                        });
+                    }
 
-                // position button-group
-                buttonGroup.style.top = (clip.getBoundingClientRect().top - buttonGroup.getBoundingClientRect().height - 16) + 'px';
-                buttonGroup.style.left = (document.getElementById('side').getBoundingClientRect().right + 16) + 'px';
-            });
+                    // position button-group
+                    buttonGroup.style.top = (clip.getBoundingClientRect().top - buttonGroup.getBoundingClientRect().height - 16) + 'px';
+                    buttonGroup.style.left = (document.getElementById('side').getBoundingClientRect().right + 16) + 'px';
+                }
+            );
         }
     });
     clip.parentElement.parentElement.appendChild(buttonGroupToggle);
