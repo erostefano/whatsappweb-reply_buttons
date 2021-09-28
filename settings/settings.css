@@ -1,3 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+header h1 {
+    flex: 3;
+}
+
+header a {
+    flex: 2;
+    text-align: center;
+    margin: auto;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: .75rem;
+    padding: .5rem;
+}
+
 .reply {
     width: 40rem;
     display: flex;
