@@ -1,3 +1,7 @@
+body {
+    width: 40rem;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -18,19 +22,18 @@ header a {
     padding: .5rem;
 }
 
-.reply {
-    width: 40rem;
+main .reply {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
 }
 
-.reply input {
+main .reply input {
     width: 100%;
     font-size: medium;
 }
 
-.reply button {
+main .reply button {
     margin-left: 0.5rem;
 }
 

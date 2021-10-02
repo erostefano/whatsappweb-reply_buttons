@@ -4,7 +4,7 @@ chrome.storage.local.get('settings', ({settings}) => {
         const replyDiv = div.cloneNode(true);
         replyDiv.children[0].value = setting;
         addEventListeners(replyDiv);
-        document.getElementById('button-group').appendChild(replyDiv);
+        document.querySelector('main').appendChild(replyDiv);
     });
     div.remove();
 });
@@ -13,7 +13,7 @@ document.getElementById('add').children[0].addEventListener('click', () => {
     const replyDiv = document.getElementsByClassName('reply')[0].cloneNode(true);
     replyDiv.children[0].value = '';
     addEventListeners(replyDiv);
-    document.getElementById('replies').appendChild(replyDiv);
+    document.querySelector('main').appendChild(replyDiv);
 });
 
 document.getElementById('save').addEventListener('click', () => {
