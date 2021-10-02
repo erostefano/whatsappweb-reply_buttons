@@ -1,5 +1,6 @@
 body {
     width: 40rem;
+    position: relative;
 }
 
 header {
@@ -29,7 +30,7 @@ main .reply {
 }
 
 main .reply input {
-    width: 100%;
+    flex: 1;
     font-size: medium;
 }
 
@@ -57,7 +58,7 @@ button {
 
 #add {
     position: absolute;
-    right: .5rem;
+    right: 0;
 }
 
 #save {
