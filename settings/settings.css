@@ -56,8 +56,8 @@ button {
 }
 
 #add {
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    right: .5rem;
 }
 
 #save {

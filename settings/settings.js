@@ -9,7 +9,7 @@ chrome.storage.local.get('settings', ({settings}) => {
     div.remove();
 });
 
-document.getElementById('add').children[0].addEventListener('click', () => {
+document.getElementById('add').addEventListener('click', () => {
     const replyDiv = document.getElementsByClassName('reply')[0].cloneNode(true);
     replyDiv.children[0].value = '';
     addEventListeners(replyDiv);
