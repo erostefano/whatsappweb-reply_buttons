@@ -16,16 +16,14 @@ document.getElementById('add').addEventListener('click', () => {
     document.querySelector('main').appendChild(replyDiv);
 });
 
-document.getElementById('save').addEventListener('click', () => {
-    const inputs = document.querySelectorAll('.reply input');
-    chrome.storage.local.set({settings: Array.from(inputs).map(input => input.value)});
-});
-
 function addEventListeners(div) {
-    div.children[1].addEventListener('click', () => {
+    const removeButton = div.children[1];
+    removeButton.addEventListener('click', () => {
         if (document.querySelectorAll('.reply input').length === 1) {
             return;
         }
-        return div.remove();
-    })
+        div.remove();
+        const inputs = document.querySelectorAll('.reply input');
+        chrome.storage.local.set({settings: Array.from(inputs).map(input => input.value)});
+    });
 }
