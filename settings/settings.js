@@ -17,13 +17,22 @@ document.getElementById('add').addEventListener('click', () => {
 });
 
 function addEventListeners(div) {
+    const input = div.children[0];
+    input.addEventListener('focusout', () => {
+        save();
+    });
+
     const removeButton = div.children[1];
     removeButton.addEventListener('click', () => {
         if (document.querySelectorAll('.reply input').length === 1) {
             return;
         }
         div.remove();
-        const inputs = document.querySelectorAll('.reply input');
-        chrome.storage.local.set({settings: Array.from(inputs).map(input => input.value)});
+        save();
     });
+}
+
+function save() {
+    const inputs = document.querySelectorAll('.reply input');
+    chrome.storage.local.set({settings: Array.from(inputs).map(input => input.value)});
 }
