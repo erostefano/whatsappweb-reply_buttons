@@ -23,18 +23,21 @@ header a {
     padding: .5rem;
 }
 
-main .reply {
-    display: flex;
-    justify-content: space-between;
+main .reply-row {
     padding: 0.5rem 0;
 }
 
-main .reply input {
+main .reply-row .reply {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .reply-row .reply input {
     flex: 1;
     font-size: medium;
 }
 
-main .reply button {
+main .reply-row .reply button {
     margin-left: 0.5rem;
 }
 

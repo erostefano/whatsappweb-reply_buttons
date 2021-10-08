@@ -1,33 +1,34 @@
 chrome.storage.local.get('settings', ({settings}) => {
-    const div = document.getElementsByClassName('reply')[0];
+    const template = document.getElementsByClassName('reply-row')[0];
     settings.forEach(setting => {
-        const replyDiv = div.cloneNode(true);
-        replyDiv.children[0].value = setting;
-        addEventListeners(replyDiv);
-        document.querySelector('main').appendChild(replyDiv);
+        const replyRow = template.cloneNode(true);
+        replyRow.children[0].children[0].value = setting;
+        addEventListeners(replyRow);
+        document.querySelector('main').appendChild(replyRow);
     });
-    div.remove();
+    template.remove();
 });
 
 document.getElementById('add').addEventListener('click', () => {
-    const replyDiv = document.getElementsByClassName('reply')[0].cloneNode(true);
-    replyDiv.children[0].value = '';
-    addEventListeners(replyDiv);
-    document.querySelector('main').appendChild(replyDiv);
+    const replyRow = document.getElementsByClassName('reply-row')[0].cloneNode(true);
+    replyRow.children[0].children[0].value = '';
+    addEventListeners(replyRow);
+    document.querySelector('main').appendChild(replyRow);
 });
 
-function addEventListeners(div) {
-    const input = div.children[0];
+function addEventListeners(replyRow) {
+    const reply = replyRow.children[0];
+    const input = reply.children[0];
     input.addEventListener('focusout', () => {
         save();
     });
 
-    const removeButton = div.children[1];
+    const removeButton = reply.children[1];
     removeButton.addEventListener('click', () => {
         if (document.querySelectorAll('.reply input').length === 1) {
             return;
         }
-        div.remove();
+        replyRow.remove();
         save();
     });
 }
