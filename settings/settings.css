@@ -27,6 +27,11 @@ main .reply-row {
     padding: 0.5rem 0;
 }
 
+main .reply-row span {
+    color: green;
+    visibility: hidden;
+}
+
 main .reply-row .reply {
     display: flex;
     justify-content: space-between;

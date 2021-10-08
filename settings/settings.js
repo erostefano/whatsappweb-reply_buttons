@@ -21,6 +21,11 @@ function addEventListeners(replyRow) {
     const input = reply.children[0];
     input.addEventListener('focusout', () => {
         save();
+        let saveMessage = replyRow.children[1];
+        saveMessage.style.visibility = 'visible';
+        setTimeout(() => {
+            saveMessage.style.visibility = 'hidden';
+        }, 500)
     });
 
     const removeButton = reply.children[1];
