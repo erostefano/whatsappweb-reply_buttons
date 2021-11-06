@@ -20,3 +20,5 @@ Follow these three steps
 ## Credits
 
 [Awesome Robot](https://www.flaticon.com/authors/pixel-perfect)
+
+[Awesome Rating](https://www.flaticon.com/authors/dmitri13)
