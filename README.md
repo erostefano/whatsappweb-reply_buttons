@@ -17,6 +17,15 @@ Follow these three steps
 2. Enable developer mode in Chrome
 3. Load unpacked project in Chrome
 
+## Styles
+
+```
+.reply-button, :hover, :active {
+    primary-color: #fff;
+    primary-bg-color: #007bff;
+}
+```
+
 ## Credits
 
 [Awesome Robot](https://www.flaticon.com/authors/pixel-perfect)
