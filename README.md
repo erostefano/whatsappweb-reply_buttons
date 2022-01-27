@@ -7,7 +7,7 @@ With this Chrome Extension you define your own reply buttons to answer faster an
 ## Install
 
 Install it directly from
-the [Chrome Web Store](https://chrome.google.com/webstore/detail/whatsapp-web-reply-button/behnlfjclodmophajlpndeafedbboolj?hl=en).
+the [Chrome Web Store](https://chrome.google.com/webstore/detail/whatsapp-web-reply-button/jeahbmmhafnppkgpnmaoedpcpbadalfg).
 
 or
 
