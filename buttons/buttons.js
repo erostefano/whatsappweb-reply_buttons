@@ -50,22 +50,25 @@ window.addEventListener('click', () => {
                             button.innerHTML = setting;
                             button.title = setting;
                             button.addEventListener('click', event => {
+                                
                                 const dataTransfer = new DataTransfer();
                                 dataTransfer.setData('text', event.target.innerHTML);
                                 const clipBoardEvent = new ClipboardEvent('paste', {
                                     clipboardData: dataTransfer,
                                     bubbles: true
                                 });
-                                const inputText = document.querySelectorAll("[contenteditable='true']")[1];
+
+                                const inputText = document.querySelector("[data-testid='conversation-compose-box-input']");
                                 inputText.dispatchEvent(clipBoardEvent)
-                                
+
+                                // wait for button to be added to the dom
                                 setTimeout(() => {
                                     const send = document.querySelector("[data-testid='send']").parentElement;
                                     send.click();
                                     buttonGroup.remove();
                                     buttonGroupToggle.classList.remove('open');
                                 }, 100)
-        
+
                             });
                             buttonGroup.appendChild(button);
                         });
