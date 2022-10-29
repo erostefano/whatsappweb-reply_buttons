@@ -52,7 +52,7 @@ window.addEventListener('click', () => {
                             button.addEventListener('click', event => {
                                 const dataTransfer = new DataTransfer();
                                 dataTransfer.setData('text', event.target.innerHTML);
-                                
+
                                 const clipBoardEvent = new ClipboardEvent('paste', {
                                     clipboardData: dataTransfer,
                                     bubbles: true
@@ -61,8 +61,9 @@ window.addEventListener('click', () => {
                                 const inputText = document.querySelector("[data-testid='conversation-compose-box-input']");
                                 inputText.dispatchEvent(clipBoardEvent)
 
-                                // wait for button to be added to the dom
+                                // wait for the button to be added to the dom
                                 setTimeout(() => {
+                                    // TODO: try by keypress "enter" instead of button click as it is not visible yet
                                     const send = document.querySelector("[data-testid='send']").parentElement;
                                     send.click();
                                     buttonGroup.remove();
