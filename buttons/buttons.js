@@ -82,5 +82,6 @@ window.addEventListener('click', () => {
             );
         }
     });
+    //lol
     clip.parentElement.parentElement.appendChild(buttonGroupToggle);
 });
