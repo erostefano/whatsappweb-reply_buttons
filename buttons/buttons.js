@@ -50,9 +50,9 @@ window.addEventListener('click', () => {
                             button.innerHTML = setting;
                             button.title = setting;
                             button.addEventListener('click', event => {
-                                
                                 const dataTransfer = new DataTransfer();
                                 dataTransfer.setData('text', event.target.innerHTML);
+                                
                                 const clipBoardEvent = new ClipboardEvent('paste', {
                                     clipboardData: dataTransfer,
                                     bubbles: true
