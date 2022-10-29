@@ -50,13 +50,22 @@ window.addEventListener('click', () => {
                             button.innerHTML = setting;
                             button.title = setting;
                             button.addEventListener('click', event => {
-                                const inputText = document.querySelectorAll(".copyable-text.selectable-text[contenteditable='true']")[1];
-                                inputText.innerHTML = event.target.innerHTML;
-                                inputText.dispatchEvent(new Event('input', {bubbles: true}));
-                                const send = document.querySelector("[data-testid='send']").parentElement;
-                                send.click();
-                                buttonGroup.remove();
-                                buttonGroupToggle.classList.remove('open');
+                                const dataTransfer = new DataTransfer();
+                                dataTransfer.setData('text', event.target.innerHTML);
+                                const clipBoardEvent = new ClipboardEvent('paste', {
+                                    clipboardData: dataTransfer,
+                                    bubbles: true
+                                });
+                                const inputText = document.querySelectorAll("[contenteditable='true']")[1];
+                                inputText.dispatchEvent(clipBoardEvent)
+                                
+                                setTimeout(() => {
+                                    const send = document.querySelector("[data-testid='send']").parentElement;
+                                    send.click();
+                                    buttonGroup.remove();
+                                    buttonGroupToggle.classList.remove('open');
+                                }, 100)
+        
                             });
                             buttonGroup.appendChild(button);
                         });
