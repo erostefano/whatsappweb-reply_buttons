@@ -1,3 +1,5 @@
+// TODO: fix saving button on first run. delete cache first
+
 chrome.storage.local.get('settings', ({settings}) => {
     const template = document.getElementsByClassName('reply-row')[0];
     settings.forEach(setting => {
