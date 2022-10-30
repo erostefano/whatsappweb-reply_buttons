@@ -63,9 +63,10 @@ window.addEventListener('click', () => {
 
                                 // wait for the button to be added to the dom
                                 setTimeout(() => {
-                                    // TODO: try by keypress "enter" instead of button click as it is not visible yet
-                                    const send = document.querySelector("[data-testid='send']").parentElement;
-                                    send.click();
+                                    inputText.dispatchEvent(new KeyboardEvent('keydown', {
+                                        keyCode: 13,
+                                    }))
+
                                     buttonGroup.remove();
                                     buttonGroupToggle.classList.remove('open');
                                 }, 100)
