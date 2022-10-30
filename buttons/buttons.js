@@ -59,7 +59,7 @@ window.addEventListener('click', () => {
                                 });
 
                                 const inputText = document.querySelector("[data-testid='conversation-compose-box-input']");
-                                inputText.dispatchEvent(clipBoardEvent)
+                                inputText.dispatchEvent(clipBoardEvent);
 
                                 // wait for the button to be added to the dom
                                 setTimeout(() => {
