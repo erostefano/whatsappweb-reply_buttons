@@ -11,9 +11,6 @@
   "permissions": [
     "storage"
   ],
-  "host_permissions": [
-    "https://web.whatsapp.com/"
-  ],
   "content_scripts": [
     {
       "js": [
