@@ -1,7 +1,7 @@
 body {
-    margin: 0;
-    width: 40rem;
     position: relative;
+    width: 40rem;
+    margin: 0;
 }
 
 header {
@@ -10,7 +10,7 @@ header {
     align-content: center;
     color: white;
     background-color: #007bff;
-    padding: 0.5rem;   
+    padding: 1rem;
 }
 
 header h1 {
@@ -29,8 +29,12 @@ header a img {
     object-fit: cover;
 }
 
+main {
+    padding: 1rem;
+}
+
 main .reply-row {
-    padding: 0.5rem 0;
+    margin: 0.5rem 0;
 }
 
 main .reply-row span {
@@ -78,4 +82,5 @@ button:hover, button:focus {
 #add {
     position: absolute;
     right: 0;
+    margin: 1rem;
 }
