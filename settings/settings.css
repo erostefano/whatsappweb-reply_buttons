@@ -21,7 +21,7 @@ header a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 header a img {
