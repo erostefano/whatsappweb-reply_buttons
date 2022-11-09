@@ -75,12 +75,12 @@ button {
 }
 
 button:hover, button:focus {
-    color: #fff;
-    background-color: #007bff;
+    border-color: black;
 }
 
 #add {
-    position: absolute;
-    right: 0;
-    margin: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    width: auto;
+    margin-bottom: 0.5rem;
 }
