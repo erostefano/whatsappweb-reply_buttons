@@ -5,9 +5,9 @@ style.setAttribute('href', chrome.runtime.getURL('buttons/buttons.css'));
 document.head.appendChild(style);
 
 window.addEventListener('click', () => {
-    const clip = document.querySelector('[data-testid="clip"]').parentElement.parentElement;
+    const menuPlus = document.querySelector('[data-testid="attach-menu-plus"]').parentElement.parentElement;
 
-    if (!clip) {
+    if (!menuPlus) {
         return;
     }
 
@@ -77,11 +77,11 @@ window.addEventListener('click', () => {
                     }
 
                     // position button-group
-                    buttonGroup.style.top = (clip.getBoundingClientRect().top - buttonGroup.getBoundingClientRect().height - 16) + 'px';
+                    buttonGroup.style.top = (menuPlus.getBoundingClientRect().top - buttonGroup.getBoundingClientRect().height - 16) + 'px';
                     buttonGroup.style.left = (document.getElementById('side').getBoundingClientRect().right + 16) + 'px';
                 }
             );
         }
     });
-    clip.parentElement.parentElement.appendChild(buttonGroupToggle);
+    menuPlus.parentElement.parentElement.appendChild(buttonGroupToggle);
 });
