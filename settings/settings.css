@@ -56,6 +56,13 @@ main .reply-row .reply button {
     margin-left: 0.5rem;
 }
 
+main .buy-me-a-coffee {
+    height: 40px;
+    margin-bottom: 0.5rem;
+    vertical-align: middle;
+    border-radius: .25rem;
+}
+
 button {
     width: 5rem;
     font-family: inherit;
