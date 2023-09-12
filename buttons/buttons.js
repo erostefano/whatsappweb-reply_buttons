@@ -5,7 +5,7 @@ style.setAttribute('href', chrome.runtime.getURL('buttons/buttons.css'));
 document.head.appendChild(style);
 
 window.addEventListener('click', () => {
-    const menuPlus = document.querySelector('[data-testid="attach-menu-plus"]').parentElement.parentElement;
+    const menuPlus = document.querySelector('[data-icon="attach-menu-plus"]').parentElement.parentElement;
 
     if (!menuPlus) {
         return;
