@@ -58,7 +58,7 @@ window.addEventListener('click', () => {
                                     bubbles: true
                                 });
 
-                                const inputText = document.querySelector("[data-testid='conversation-compose-box-input']");
+                                const inputText = document.querySelectorAll('[contenteditable="true"]')[1];
                                 inputText.dispatchEvent(clipBoardEvent);
 
                                 // wait for the button to be added to the dom
