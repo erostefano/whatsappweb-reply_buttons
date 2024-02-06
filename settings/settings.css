@@ -91,3 +91,11 @@ button:hover, button:focus {
     width: auto;
     margin-bottom: 0.5rem;
 }
+
+#feedback {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    cursor: pointer;
+    border-color: transparent;
+}
