@@ -1,6 +1,8 @@
 # WhatsApp Web Reply Buttons
 
-With this Chrome Extension you define your own reply buttons to answer faster and easier.
+Guess you are running a business over WhatsApp Web and your customers ask you the same questions the whole time.
+Wouldn't it be nice to keep the answers saved and to reply easy and fast? Then this Chrome Extension is exactly what you
+are looking for.
 
 ![Demo](assets/demo.gif)
 
