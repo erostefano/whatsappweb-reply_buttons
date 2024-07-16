@@ -26,6 +26,12 @@ Follow these three steps
 }
 ```
 
+## To Do
+
+- use a styling framework
+- redesign the reply form
+- add nightly check to see if it still works
+
 ## Credits
 
 [Awesome Robot](https://www.flaticon.com/authors/pixel-perfect)
