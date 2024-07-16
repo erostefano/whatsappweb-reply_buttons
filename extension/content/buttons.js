@@ -1,7 +1,7 @@
 // add stylesheet
 const style = document.createElement('link');
 style.setAttribute('rel', 'stylesheet');
-style.setAttribute('href', chrome.runtime.getURL('buttons/buttons.css'));
+style.setAttribute('href', chrome.runtime.getURL('content/buttons.css'));
 document.head.appendChild(style);
 
 window.addEventListener('click', () => {
@@ -18,7 +18,7 @@ window.addEventListener('click', () => {
     // create buttonGroupToggle
     const buttonGroupToggle = document.createElement('img');
     buttonGroupToggle.setAttribute('id', 'button-group-toggle');
-    buttonGroupToggle.src = chrome.runtime.getURL('icons/robot64.png');
+    buttonGroupToggle.src = chrome.runtime.getURL('assets/robot64.png');
     buttonGroupToggle.addEventListener('click', () => {
         if (buttonGroupToggle.classList.contains('open')) {
             document.getElementById('button-group').remove();
