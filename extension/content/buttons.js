@@ -63,9 +63,21 @@ window.addEventListener('click', () => {
 
                                 // wait for the button to be added to the dom
                                 setTimeout(() => {
-                                    inputText.dispatchEvent(new KeyboardEvent('keydown', {
-                                        keyCode: 13,
-                                    }))
+                                    const event = new KeyboardEvent('keydown', {
+                                        key: 'Enter',
+                                        code: 'Enter',
+                                        keyCode: 13, // Deprecated, but still used for compatibility
+                                        which: 13, // Deprecated, but still used for compatibility
+                                        bubbles: true,
+                                        cancelable: true,
+                                        composed: true,
+                                        ctrlKey: false,
+                                        shiftKey: false,
+                                        altKey: false,
+                                        metaKey: false
+                                    });
+
+                                    inputText.dispatchEvent(event);
 
                                     buttonGroup.remove();
                                     buttonGroupToggle.classList.remove('open');
