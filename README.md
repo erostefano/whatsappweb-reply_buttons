@@ -6,7 +6,7 @@ are looking for.
 
 ![Demo](assets/demo.gif)
 
-## Install
+## Get started
 
 Install it directly from
 the [Chrome Web Store](https://chrome.google.com/webstore/detail/reply-buttons/dmjppibbdlgficlnmoegcdmdlinelhgp).
@@ -30,8 +30,10 @@ Follow these three steps
 
 ## To Do
 
-- use a styling framework
 - redesign the reply form
+- use a styling framework
+- split the scripts
+- use icons as svgs based on browser theme
 - add nightly check to see if it still works
 
 ## Credits
