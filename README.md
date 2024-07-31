@@ -31,6 +31,7 @@ Follow these three steps
 ## To Do
 
 - redesign the reply form
+- use font awesome for icons
 - use a styling framework
 - split the scripts
 - use icons as svgs based on browser theme
