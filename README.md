@@ -1,5 +1,7 @@
 # WhatsApp Web Reply Buttons
 
+![Project Status: No Longer Maintained](https://img.shields.io/badge/Project%20Status-No%20Longer%20Maintained-red)
+
 Guess you are running a business over WhatsApp Web and your customers ask you the same questions the whole time.
 Wouldn't it be nice to keep the answers saved and to reply easy and fast? Then this Chrome Extension is exactly what you
 are looking for.
